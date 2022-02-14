@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: bisque;
+}
+
+.nav-elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+}
+
+.path {
+    background-color: rgb(219, 209, 209);
+}
