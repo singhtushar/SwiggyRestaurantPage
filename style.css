@@ -191,3 +191,25 @@
     padding: 5px 10px 10px 10px;
     margin-right: 15px;
 }
+
+.dropdown-container {
+    display: none;
+}
+
+.dropdown-starter-elements {
+    display: flex;
+    flex-direction: column;
+    background-color: bisque;
+    /* margin-right: 20px; */
+}
+
+.dropdown-starter-elements a {
+    text-decoration: none;
+    color: black;
+    padding: 0.2rem;
+}
+
+.dropdown-starter-elements a:hover {
+    font-weight: bold;
+}
+
