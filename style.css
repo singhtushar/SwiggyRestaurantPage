@@ -33,6 +33,8 @@
     flex-direction: row;
     justify-content: space-around;
     background-color: black;
+    padding: 20px 0 20px 0;
+    margin-bottom: 40px;
 }
 
 .disp-img {
@@ -103,7 +105,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    border-right: 0.5px solid black;
+    border-right: 0.5px solid rgb(124, 124, 124);
+    padding-right: 30px;
 }
 
 .menu-content {
@@ -115,4 +118,76 @@
 .menu-content:hover {
     color: orange;
     cursor: pointer;
+}
+
+.menu-items {
+    width: 630px;
+    height: 650px;
+    padding: 0 20px 0 20px;
+    overflow: scroll;
+}
+
+.menu-header {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.menu-items-desc {
+    margin: 15px 0 15px 0;
+    border-bottom: 1px solid rgb(119, 119, 119);
+    padding: 20px 0 40px 0;
+}
+
+.cart-head {
+    color: #7e808c;
+}
+
+.empty-cart-image {
+    margin-top: 30px;
+    height: 212px;
+    width: 278px;
+}
+
+.item-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: right;
+}
+
+.item-quantity {
+    color: rgb(52, 158, 3);
+    font-weight: bold;
+}
+
+.veg-icon {
+    padding-top: 20px;
+    height: 18px;
+    width: 18px;
+}
+
+.item-name {
+    margin-top: 10px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.search-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    top: 324px;
+}
+
+.filter {
+    background-color: white;
+    padding: 5px 10px 10px 10px;
+}
+
+.search-box > input {
+    border: none;
+    border-radius: 0px;
+    padding: 5px 10px 10px 10px;
+    margin-right: 15px;
 }
