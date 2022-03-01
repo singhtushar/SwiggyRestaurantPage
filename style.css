@@ -234,3 +234,12 @@
     margin: 3px;
 }
 
+.display-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.ordered-item {
+    border: 1px solid black;
+}
+
