@@ -111,12 +111,18 @@ itemsList.push(item12);
 itemsList.push(item13);
 itemsList.push(item14);
 
-console.log(itemsList);
+// console.log(itemsList);
 
 const menuItemClass = document.getElementsByClassName('menu-items');
-console.log(menuItemClass);
+// console.log(menuItemClass);
 
-var renderMenuItems = function () {
+var renderMenuItems = function (itemsList) {
+    menuItemClass[0].innerHTML = "";
+    const menuHeader = document.createElement('div');
+    menuHeader.classList.add('menu-header');
+    menuHeader.innerHTML = 'Recommonded';
+
+    menuItemClass[0].appendChild(menuHeader);
     
     itemsList.forEach((item, index)=>{
         // item type div
@@ -175,9 +181,12 @@ var renderMenuItems = function () {
 
         const rightContainerDiv = document.createElement('div');
         rightContainerDiv.classList.add('right-container');
-        rightContainerDiv.appendChild(itemImage);
-        rightContainerDiv.appendChild(btnWrapperDiv);
+        const rightContainerChild = document.createElement('div');
+        rightContainerChild.classList.add('image-container')
 
+        rightContainerChild.appendChild(itemImage);
+        rightContainerChild.appendChild(btnWrapperDiv);
+        rightContainerDiv.appendChild(rightContainerChild);
         const container = document.createElement('div');
         container.classList.add('item-container');
         container.appendChild(leftContainerDiv);
@@ -189,6 +198,8 @@ var renderMenuItems = function () {
         menuItemClass[0].appendChild(container);
         menuItemClass[0].appendChild(borderDiv);
     })
+
+    renderItemQuantity();
 
 }
 
@@ -227,20 +238,174 @@ var renderItemQuantity = function () {
                 }
                 itemQuantity.innerHTML = `${itemsInCart[`${itemClicked[i].name}`]}`; 
             }
-            console.log(itemsInCart);
+            // console.log(itemsInCart);
             renderCartItems(itemsInCart);
         })
     }
 }
 
 var renderCartItems = function(itemsInCart) {
-    for(const item in itemsInCart) {
-        console.log(item, itemsInCart[item]);
+    const isEmpty = Object.keys(itemsInCart).length === 0;
+    if(!isEmpty) {
+        console.log("cart contains items");
+        document.getElementById('items-present').style.display = 'none';
+        document.getElementById('cart-header').style.display = 'block';
+    } else {
+        console.log("cart is empty");
+        document.getElementById('items-present').style.display = 'block';
+        document.getElementById('cart-header').style.display = 'none';
     }
+
+    // for(const item in itemsInCart) {
+    //     console.log(item, itemsInCart[item]);
+    // }
+
+    // orderedItemInfo = [
+    //     {
+    //         isVeg,
+    //         name,
+    //         count,
+    //         price
+    //     },
+    // ]
+
+    orderedItemInfo = [];
+    for(let item in itemsInCart) {
+        const itemName = item;
+        const itemCount = itemsInCart[`${item}`];
+        let obj = {};
+        itemsList.forEach((eachItem, index)=>{
+            if(eachItem.name === itemName) {
+                obj = eachItem;
+                obj.count = itemCount;
+                orderedItemInfo.push(obj);
+            }
+        })
+    }
+
+    // console.log(orderedItemInfo);
+
+    const cartItemContainer = document.getElementById('display-items');
+
+    cartItemContainer.innerHTML = "";
+
+    let totalPrice = 0;
+
+    orderedItemInfo.forEach((item, index)=>{
+        const eachItemContainer = document.createElement('div');
+        eachItemContainer.classList.add('each-item-container');
+
+        // creating item type icon
+        const itemTypeIcon = document.createElement('div');
+        itemTypeIcon.classList.add('each-item-container-child1');
+        itemTypeIcon.innerHTML = `${item.isVeg?`<img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
+        alt="" />`:`<img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Non_veg_symbol.svg" alt="" />`}`;
+
+        // item name
+        const itemName = document.createElement('div');
+        itemName.classList.add('each-item-container-child2');
+        itemName.innerHTML = `${item.name}`;
+
+        // item quantity
+        const itemCount = document.createElement('div');
+        itemCount.classList.add('each-item-container-child3');
+        itemCount.innerHTML = `${item.count}`;
+
+        //item price
+        const itemPrice = document.createElement('div');
+        itemPrice.classList.add('each-item-container-child4');
+        itemPrice.innerHTML = `&#8377; ${item.price*item.count}`;
+
+        totalPrice += item.price*item.count;
+
+        eachItemContainer.appendChild(itemTypeIcon);
+        eachItemContainer.appendChild(itemName);
+        eachItemContainer.appendChild(itemCount);
+        eachItemContainer.appendChild(itemPrice);
+
+        cartItemContainer.appendChild(eachItemContainer);
+    })
+
+    if(totalPrice>0) {
+        const subTotal = document.createElement('div');
+        subTotal.innerHTML = `<h3>Subtotal</h3>`;
+
+        const amount = document.createElement('div');
+        amount.classList.add('subtotal');
+        amount.innerHTML = `<h3>&#8377; ${totalPrice}</h3>`;
+
+        const subTotalContainer = document.createElement('div');
+        subTotalContainer.classList.add('subtotal-container');
+        
+        subTotalContainer.appendChild(subTotal);
+        subTotalContainer.appendChild(amount);
+
+        const checkoutBtn = document.createElement('button');
+        checkoutBtn.setAttribute('id','checkout-btn');
+        checkoutBtn.innerHTML = `<h3>CHECKOUT &#8594;</h3>`;
+
+        cartItemContainer.appendChild(subTotalContainer);
+        cartItemContainer.appendChild(checkoutBtn);
+    }
+
+
+
+
+
 }
 
-renderMenuItems();
+const searchInput = document.querySelector('input[type=text]');
+
+var renderSearchBar = function() {
+    searchInput.addEventListener('input', ()=>{
+        const inputStr = `${searchInput.value}`.toLowerCase();
+        // console.log(inputStr);
+        if(inputStr.length === 0) {
+            renderMenuItems(itemsList);
+        } else {
+            var renderItems = [];
+            itemsList.forEach((item, index)=>{
+                const itemStr = item.name.toLowerCase();
+                if(itemStr.includes(inputStr)){
+                    renderItems.push(item);
+                }
+            })
+
+            // console.log(renderItems);
+
+            renderMenuItems(renderItems);
+        }
+
+    })
+}
+const vegOnlyInput = document.querySelector('input[name=veg-only]');
+console.log(vegOnlyInput);
+
+vegOnlyInput.addEventListener('checked', ()=>{
+    var vegOnly = [];
+    if(vegOnlyInput.checked === true) {
+        if(vegOnlyInput.checked) {
+            itemsList.forEach((item, index)=>{
+                if(item.isVeg === true) {
+                    vegOnly.push(item);
+                }
+            })
+        }
+        console.log(vegOnly);
+        renderMenuItems(vegOnly);
+    } else {
+        renderMenuItems(itemsList);
+    }
+})
+
 renderItemQuantity();
+renderSearchBar();
+// renderVegOnlyFilter();
+if(searchInput.value.length === 0)
+    renderMenuItems(itemsList);
+if(vegOnlyInput.checked === false)
+    renderMenuItems(itemsList);
+
 
 
 
