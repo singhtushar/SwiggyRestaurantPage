@@ -11,18 +11,20 @@
 </head>
 
 <body>
-    <div class="navbar-container">
-        <div class="nav-elements">
-            <div>
-                <img class="swiggy-logo" src="./images/swiggy-1.svg" alt="" />
+    <div class="mg-header">
+        <div class="navbar-container">
+            <div class="nav-elements">
+                <div>
+                    <img class="swiggy-logo" src="./images/swiggy-1.svg" alt="" />
+                </div>
+                <div>Set location</div>
+                <div>Click to Choose Location&nbsp;<i class="fa fa-sort-desc"></i></div>
             </div>
-            <div>Set location</div>
-            <div>Click to Choose Location&nbsp;<i class="fa fa-sort-desc"></i></div>
-        </div>
-        <div class="nav-elements">
-            <div><i class="fa fa-cart-arrow-down"></i>&nbsp;Cart</div>
-            <div><i class="fa fa-user"></i>&nbsp;Sign In</div>
-            <div><i class="fa fa-life-ring"></i>&nbsp;Help</div>
+            <div class="nav-elements">
+                <div><i class="fa fa-cart-arrow-down"></i>&nbsp;Cart</div>
+                <div><i class="fa fa-user"></i>&nbsp;Sign In</div>
+                <div><i class="fa fa-life-ring"></i>&nbsp;Help</div>
+            </div>
         </div>
     </div>
     <div class="path">
@@ -144,7 +146,11 @@
 
         </div>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="./controller/renderMenuItems.mjs"></script>
+    <script type="module" src="./controller/renderItemQuantity.mjs"></script>
+    <script type="module" src="./controller/renderCartItems.mjs"></script>
+    <script type="module" src="./controller/renderSearchItems.mjs"></script>
 </body>
 
 </html>
