@@ -20,6 +20,7 @@ class ItemBuilder {
         this.description = "";
         this.image = "";
         this.category = "";
+        this.count = 0;
     }
 
     setName(name) {
@@ -56,9 +57,13 @@ class ItemBuilder {
         this.category = category;
         return this;
     }
+    setCount(cnt){
+        this.count = cnt;
+        return this;
+    }
 
     build() {
-        return new Item(this.name, this.isVeg, this.isBestSeller, this.price, this.description, this.image, this.category);
+        return new Item(this.name, this.isVeg, this.isBestSeller, this.price, this.description, this.image, this.category, this.count);
     }
 }
 

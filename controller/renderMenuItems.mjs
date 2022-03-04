@@ -50,12 +50,16 @@ export function renderMenuItems(itemsList) {
         //btnWrapper div
         const btnWrapperDiv = document.createElement('div');
         btnWrapperDiv.classList.add('btn-wrapper');
-        btnWrapperDiv.appendChild(decrementBtn);
         const addText = document.createElement('div');
         addText.classList.add('display-item-quantity');
-        addText.innerHTML = 'ADD';
+        addText.innerHTML = "ADD";
+        if(localStorage.getItem(item.name)){
+            item.count = `${JSON.parse(localStorage.getItem(item.name)).count}`;
+            addText.innerHTML = `${JSON.parse(localStorage.getItem(item.name)).count}`;
+        } 
+        btnWrapperDiv.appendChild(decrementBtn);
         btnWrapperDiv.appendChild(addText);
-        btnWrapperDiv.appendChild(incrementBtn)
+        btnWrapperDiv.appendChild(incrementBtn);
 
         const leftContainerDiv = document.createElement('div');
         leftContainerDiv.classList.add('left-container');

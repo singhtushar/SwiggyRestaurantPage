@@ -1,6 +1,7 @@
 import { itemsList } from "../model/data.mjs";
 
 export function renderCartItems(itemsInCart) {
+    
     const isEmpty = Object.keys(itemsInCart).length === 0;
     if(!isEmpty) {
         console.log("cart contains items");
@@ -65,7 +66,21 @@ export function renderCartItems(itemsInCart) {
         // item quantity
         const itemCount = document.createElement('div');
         itemCount.classList.add('each-item-container-child3');
-        itemCount.innerHTML = `<div class="quantity-btn"${item.count}`;
+        // itemCount.classList.add('btn-wrapper');
+        const incrementBtn = document.createElement('button');
+        incrementBtn.classList.add('cart-quantity-btn');
+        incrementBtn.setAttribute("name", `${item.name}`);
+        incrementBtn.innerHTML = "+";
+        const decrementBtn = document.createElement('button');
+        decrementBtn.classList.add('cart-quantity-btn');
+        decrementBtn.setAttribute("name", `${item.name}`);
+        decrementBtn.innerHTML = "-";
+        const addText = document.createElement('div');
+        addText.classList.add('display-item-quantity');
+        addText.innerHTML = `${item.count}`;
+        itemCount.appendChild(decrementBtn);
+        itemCount.appendChild(addText);
+        itemCount.appendChild(incrementBtn);
 
         //item price
         const itemPrice = document.createElement('div');
@@ -98,10 +113,23 @@ export function renderCartItems(itemsInCart) {
 
         const checkoutBtn = document.createElement('button');
         checkoutBtn.setAttribute('id','checkout-btn');
+        checkoutBtn.type = 'submit';
         checkoutBtn.innerHTML = `<h3>CHECKOUT &#8594;</h3>`;
 
         cartItemContainer.appendChild(subTotalContainer);
         cartItemContainer.appendChild(checkoutBtn);
+
+        document.getElementById('checkout-btn').addEventListener('click', ()=>{
+            console.log('success');
+            orderedItemInfo.forEach((item)=>{
+                let lstorageVal = {
+                    count: item.count,
+                    price: item.price
+                }
+                localStorage.setItem(`${item.name}`, JSON.stringify(lstorageVal));
+            })
+        })
+
     }
 
 }

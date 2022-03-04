@@ -3,7 +3,7 @@ import { renderMenuItems } from "./controller/renderMenuItems.mjs";
 import { renderItemQuantity } from "./controller/renderItemQuantity.mjs";
 import { renderSearchBar } from "./controller/renderSearchItems.mjs";
 import { renderVegOnly } from "./controller/renderVegOnly.mjs";
-
+ 
 (function () {
     const dropdown = document.getElementsByClassName("menu-content");
     for (let i = 0; i < dropdown.length; i++) {
@@ -17,7 +17,6 @@ import { renderVegOnly } from "./controller/renderVegOnly.mjs";
         });
     }
 })();
-
 
 renderMenuItems(itemsList);
 renderItemQuantity();

@@ -1,8 +1,16 @@
 import { renderCartItems } from "./renderCartItems.mjs";
+import { itemsList } from "../model/data.mjs";
 
 export function renderItemQuantity() {
-    const itemClicked = document.getElementsByClassName('quantity-btn');
     var itemsInCart = {};
+    itemsList.forEach((item)=>{
+        if(localStorage.getItem(item.name)) {
+            itemsInCart[`${item.name}`] = JSON.parse(localStorage.getItem(item.name)).count;
+            item.count = JSON.parse(localStorage.getItem(item.name)).count;
+        }
+    })
+    renderCartItems(itemsInCart);
+    const itemClicked = document.getElementsByClassName('quantity-btn');
     for(let i=0;i<itemClicked.length;i++) {
         itemClicked[i].addEventListener('click', ()=>{
             if(itemClicked[i].innerHTML === '-'){
@@ -22,6 +30,10 @@ export function renderItemQuantity() {
                         itemsInCart[`${itemClicked[i].name}`] = count;
                         itemQuantity.innerHTML = `${itemsInCart[`${itemClicked[i].name}`]}`; 
                     }
+                    itemsList.forEach((item)=>{
+                        if(item.name === itemClicked[i].name)
+                            item.count = count;
+                    })
                 } 
             }
             else{
@@ -32,7 +44,12 @@ export function renderItemQuantity() {
                     let count = itemsInCart[`${itemClicked[i].name}`];
                     count++;
                     itemsInCart[`${itemClicked[i].name}`] = count;
+                    itemsList.forEach((item)=>{
+                        if(item.name === itemClicked[i].name)
+                            item.count = count;
+                    })
                 }
+                
                 itemQuantity.innerHTML = `${itemsInCart[`${itemClicked[i].name}`]}`; 
             }
             // console.log(itemsInCart);
