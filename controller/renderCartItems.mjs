@@ -1,4 +1,6 @@
 import { itemsList } from "../model/data.mjs";
+import { renderMenuItems } from "./renderMenuItems.mjs";
+import { renderItemQuantity } from "./renderItemQuantity.mjs";
 
 export function renderCartItems(itemsInCart) {
     
@@ -129,6 +131,31 @@ export function renderCartItems(itemsInCart) {
                 localStorage.setItem(`${item.name}`, JSON.stringify(lstorageVal));
             })
         })
+
+        const cartQtnBtn = document.getElementsByClassName('cart-quantity-btn');
+        console.log(cartQtnBtn);
+
+        for(let i=0; i<cartQtnBtn.length; i++) {
+            cartQtnBtn[i].addEventListener('click', ()=>{
+                if(cartQtnBtn[i].innerHTML === '-') {
+                    // console.log(cartQtnBtn[i].name)
+                    itemsList.forEach((item)=>{
+                        if(cartQtnBtn[i].name === item.name) {
+                            item.count--;
+                        }
+                    })
+                } 
+                else if(cartQtnBtn[i].innerHTML === '+') {
+                    itemsList.forEach((item)=>{
+                        if(cartQtnBtn[i].name === item.name) {
+                            item.count++;
+                        }
+                    })
+                }
+                renderMenuItems(itemsList);
+                renderItemQuantity();
+            })
+        }
 
     }
 

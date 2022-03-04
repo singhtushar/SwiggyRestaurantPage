@@ -56,7 +56,9 @@ export function renderMenuItems(itemsList) {
         if(localStorage.getItem(item.name)){
             item.count = `${JSON.parse(localStorage.getItem(item.name)).count}`;
             addText.innerHTML = `${JSON.parse(localStorage.getItem(item.name)).count}`;
-        } 
+        } else if(item.count) {
+            addText.innerHTML = `${item.count}`;
+        }
         btnWrapperDiv.appendChild(decrementBtn);
         btnWrapperDiv.appendChild(addText);
         btnWrapperDiv.appendChild(incrementBtn);

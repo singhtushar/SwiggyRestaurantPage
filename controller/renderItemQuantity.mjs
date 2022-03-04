@@ -8,7 +8,11 @@ export function renderItemQuantity() {
             itemsInCart[`${item.name}`] = JSON.parse(localStorage.getItem(item.name)).count;
             item.count = JSON.parse(localStorage.getItem(item.name)).count;
         }
+        if(item.count>0) {
+            itemsInCart[`${item.name}`] = item.count;
+        }
     })
+
     renderCartItems(itemsInCart);
     const itemClicked = document.getElementsByClassName('quantity-btn');
     for(let i=0;i<itemClicked.length;i++) {
@@ -31,8 +35,10 @@ export function renderItemQuantity() {
                         itemQuantity.innerHTML = `${itemsInCart[`${itemClicked[i].name}`]}`; 
                     }
                     itemsList.forEach((item)=>{
-                        if(item.name === itemClicked[i].name)
-                            item.count = count;
+                        if(item.name === itemClicked[i].name) {
+                            if(item.count > 0)
+                                item.count--;
+                        }
                     })
                 } 
             }
@@ -46,13 +52,13 @@ export function renderItemQuantity() {
                     itemsInCart[`${itemClicked[i].name}`] = count;
                     itemsList.forEach((item)=>{
                         if(item.name === itemClicked[i].name)
-                            item.count = count;
+                            item.count++;
                     })
                 }
                 
                 itemQuantity.innerHTML = `${itemsInCart[`${itemClicked[i].name}`]}`; 
             }
-            // console.log(itemsInCart);
+            // console.log(itemsList);
             renderCartItems(itemsInCart);
         })
     }

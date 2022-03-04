@@ -1,22 +1,27 @@
 * {
     margin: 0;
     padding: 0;
+    transition: all .1s linear;
 }
 
 .navbar-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 85px;
+    margin: 0 230px;
 }
 
 .nav-elements {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width: 30%;
     padding: 20px;
+}
+
+.nav-childs {
+    font-size: 1.2rem;
 }
 
 .swiggy-logo {
@@ -36,7 +41,7 @@
 .display-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     background-color: #191b25;
     padding: 20px 0 20px 0;
     margin-bottom: 40px;
@@ -45,6 +50,7 @@
 .disp-img {
     display: flex;
     align-items: center;
+    margin-left: 252px;
 }
 
 .disp-img > img {
@@ -57,6 +63,11 @@
 
 .restaurant-name {
     font-size: 160%;
+}
+
+.restaurant-info {
+    margin-left: 35px;
+    margin-right: 210px;
 }
 
 .ratings-desc {
@@ -89,15 +100,27 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+    margin-left: 90px;
 }
 
 .offer-description-padding {
     padding-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.displaybar-text-color {
+    font-size: 1.2rem;
 }
 
 .offers-display {
     border: 0.5px solid rgb(73, 70, 70);
-    padding: 10px;
+    position: inherit;
+    top: -19px;
+    right: -1px;
+    padding: 20px;
+    width: 260px;
+    height: 112px;
 }
 
 .menu-items-section {
@@ -177,6 +200,7 @@
     justify-content: center;
     width: 100%;
     top: 358px;
+    margin-left: -123px;
 }
 
 .filter {
@@ -280,7 +304,10 @@
     align-items: center;
     background-color: white;
     position: relative;
-    bottom: 30px;
+    bottom: 20px;
+    width: fit-content;
+    right: -19px;
+    border: 0.5px solid black;
 }
 
 .quantity-btn {
@@ -293,6 +320,7 @@
 
 .item-description {
     margin: 14px 0 0 0;
+    color: #93959f;
 }
 
 .container-division-border {
@@ -309,6 +337,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 5px 0;
 }
 
 .each-item-container-child1 {
@@ -319,18 +348,21 @@
 .each-item-container-child2 {
     margin: 0 10px;
     min-width: 50%;
+    font-size: 1.2rem;
 }
 
 .each-item-container-child3 {
     margin: 0 10px;
-    min-width: 20%;
     display: flex;
     align-items: center;
+    border: 0.5px solid black;
+    font-size: 1.2rem;
 }
 
 .each-item-container-child4 {
     margin: 0 10px;
     min-width: 25%;
+    font-size: 1.2rem;
 }
 
 .each-item-container-child1 > img {
@@ -358,7 +390,7 @@
 }
 
 .mg-header {
-    background-color: bisque;
+    background-color: white;
 }
 
 .cart-quantity-btn {
@@ -367,4 +399,12 @@
     background-color: white;
     border: none;
     cursor: pointer;
+}
+
+.cart-quantity-btn:hover {
+    background-color: green;
+}
+
+.quantity-btn:hover {
+    background-color: green;
 }
