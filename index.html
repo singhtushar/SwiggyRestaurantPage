@@ -11,55 +11,59 @@
 </head>
 
 <body>
-    <div class="navbar-container">
-        <div class="nav-elements">
-            <div>
-                <img class="swiggy-logo" src="./images/swiggy-1.svg" alt="" />
+    <div class="mg-header">
+        <div class="navbar-container">
+            <div class="nav-elements">
+                <div class="nav-childs">
+                    <img class="swiggy-logo" src="./images/swiggy-1.svg" alt="" />
+                </div>
+                <div class="nav-childs"><u>Set location</u> &nbsp; Click to Choose Location&nbsp;<i class="fa fa-angle-down"></i></div>
             </div>
-            <div>Set location</div>
-            <div>Click to Choose Location&nbsp;<i class="fa fa-sort-desc"></i></div>
-        </div>
-        <div class="nav-elements">
-            <div><i class="fa fa-cart-arrow-down"></i>&nbsp;Cart</div>
-            <div><i class="fa fa-user"></i>&nbsp;Sign In</div>
-            <div><i class="fa fa-life-ring"></i>&nbsp;Help</div>
+            <div class="nav-elements">
+                <div class="nav-childs"><i class="fa fa-cart-arrow-down"></i>&nbsp;Cart</div>
+                <div class="nav-childs"><i class="fa fa-user"></i>&nbsp;Sign In</div>
+                <div class="nav-childs"><i class="fa fa-life-ring"></i>&nbsp;Help</div>
+            </div>
         </div>
     </div>
     <div class="path">
         <p>Home / Bangalore / BTM - Bangalore / Kitchens of Punjab</p>
     </div>
-    <div class="display-container">
-        <div class="disp-img">
-            <img src="./images/swiggy display image.jpeg" alt="">
-        </div>
-        <div class="restaurant-info">
-            <div class="restaurant-name displaybar-text-color restaurant-info-padding">Kitchens of Punjab</div>
-            <div class="restaurant-desc displaybar-text-color restaurant-info-padding">Punjabi, North Indian</div>
-            <div class="restaurant-desc displaybar-text-color restaurant-info-padding">Bilekahalli, BTM - Bangalore
+    
+    <div class="section-2">
+        <div class="display-container">
+            <div class="disp-img">
+                <img src="./images/swiggy display image.jpeg" alt="">
             </div>
-            <div class="ratings-desc">
-                <div class="ratings ratings-desc-padding">
-                    <div class="content-padding"><i class="fa fa-star displaybar-text-color">&nbsp;4.1</i></div>
-                    <div class="displaybar-text-color">50+ ratings</div>
+            <div class="restaurant-info">
+                <div class="restaurant-name displaybar-text-color restaurant-info-padding">Kitchens of Punjab</div>
+                <div class="restaurant-desc displaybar-text-color restaurant-info-padding">Punjabi, North Indian</div>
+                <div class="restaurant-desc displaybar-text-color restaurant-info-padding">Bilekahalli, BTM - Bangalore
                 </div>
-                <div class="delivery-time ratings-desc-padding">
-                    <div class="content-padding displaybar-text-color">--mins</div>
-                    <div class="displaybar-text-color">Delivery time</div>
-                </div>
-                <div class="item-cost ratings-desc-padding">
-                    <div class="content-padding displaybar-text-color">&#8377; 400</div>
-                    <div class="displaybar-text-color">Cost for two</div>
+                <div class="ratings-desc">
+                    <div class="ratings ratings-desc-padding">
+                        <div class="content-padding"><i class="fa fa-star displaybar-text-color">&nbsp;4.1</i></div>
+                        <div class="displaybar-text-color">50+ ratings</div>
+                    </div>
+                    <div class="delivery-time ratings-desc-padding">
+                        <div class="content-padding displaybar-text-color">--mins</div>
+                        <div class="displaybar-text-color">Delivery time</div>
+                    </div>
+                    <div class="item-cost ratings-desc-padding">
+                        <div class="content-padding displaybar-text-color">&#8377; 400</div>
+                        <div class="displaybar-text-color">Cost for two</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="offer-box">
-            <div class="displaybar-text-color offer-description-padding">OFFER</div>
-            <div class="offers-display">
-                <div class="offer-description-padding displaybar-text-color"><i class="fa fa-certificate"></i> 20% off |
-                    Use code PARTY</div>
-                <div class="displaybar-text-color"><i class="fa fa-certificate"></i> 30% off up to &#8377; 150 on orders
+            <div class="offer-box">
+                <div class="displaybar-text-color offer-description-padding">OFFER</div>
+                <div class="offers-display">
+                    <div class="offer-description-padding displaybar-text-color"><i class="fa fa-certificate"></i> 20% off |
+                        Use code PARTY</div>
+                    <div class="displaybar-text-color"><i class="fa fa-certificate"></i> 30% off up to &#8377; 150 on orders
+                    </div>
+                    <div class="displaybar-text-color">above &#8377; 400 | Use code JUMBO</div>
                 </div>
-                <div class="displaybar-text-color">above &#8377; 400 | Use code JUMBO</div>
             </div>
         </div>
     </div>
@@ -73,169 +77,84 @@
         <div class="menu-index">
             <div class="menu-content">Recommonded</div>
             <div class="menu-content">Platters</div>
-            <div class="menu-content">Starters</div>
-            <div class="menu-content">Family Binge Packs</div>
-            <div class="menu-content">Main Course</div>
-            <div class="menu-content">Rice & Indian Breads</div>
-            <div class="menu-content">Premium Thalis</div>
-            <div class="menu-content">Desserts & Beverages</div>
+            <div class="menu-content">Starters&nbsp;<i class="fa fa-caret-down"></i></div>
+            <div class="dropdown-container">
+                <div class="dropdown-starter-elements">
+                    <a href="#">Veg Starter</a>
+                    <a href="#">Non-Veg Starter</a>
+                </div>
+            </div>
+            <div class="menu-content">Family Binge Packs&nbsp;<i class="fa fa-caret-down"></i></div>
+            <div class="dropdown-container">
+                <div class="dropdown-starter-elements">
+                    <a href="#">Pack for 2</a>
+                    <a href="#">Pack for 4</a>
+                </div>
+            </div>
+            <div class="menu-content">Main Course&nbsp;<i class="fa fa-caret-down"></i></div>
+            <div class="dropdown-container">
+                <div class="dropdown-starter-elements">
+                    <a href="#">Gravy Non-Veg</a>
+                    <a href="#">Gravy Veg</a>
+                </div>
+            </div>
+            <div class="menu-content">Rice & Indian Breads&nbsp;<i class="fa fa-caret-down"></i></div>
+            <div class="dropdown-container">
+                <div class="dropdown-starter-elements">
+                    <a href="#">Indian Breads</a>
+                    <a href="#">RICE</a>
+                </div>
+            </div>
+            <div class="menu-content">Premium Thalis&nbsp;<i class="fa fa-caret-down"></i></div>
+            <div class="dropdown-container">
+                <div class="dropdown-starter-elements">
+                    <a href="#">Non-Veg Premium Thalis</a>
+                    <a href="#">Veg Starter</a>
+                </div>
+            </div>
+            <div class="menu-content">Desserts & Beverages&nbsp;<i class="fa fa-caret-down"></i></div>
+            <div class="dropdown-container">
+                <div class="dropdown-starter-elements">
+                    <a href="#">Desserts</a>
+                    <a href="#">Beverages</a>
+                </div>
+            </div>
             <div class="menu-content">Accompaniments</div>
         </div>
+
         <div class="menu-items">
-            <div class="menu-header">Recommonded</div>
-            <img class="veg-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
-                alt="">
-            <div class="item-name">Veg Platter</div>
-            <div class="menu-items-desc">
-                <div class="item-img">
-                    <div class="item-img">
-                        <img src="./images/swiggy display image.jpeg" style="height: 70px;" />
-                        <div class="item-quantity">ADD</div>
-                    </div>
-                </div> Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus consequatur sint necessitatibus
-                sunt fugiat voluptate enim perspiciatis velit sapiente?
-            </div>
-            <img class="veg-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
-                alt="">
-            <div class="item-name">Achari Paneer Tikka</div>
-            <div class="menu-items-desc">
-                <div class="item-img">
-                    <img src="./images/swiggy display image.jpeg" style="height: 70px;" />
-                    <div class="item-quantity">ADD</div>
-                </div> Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus consequatur sint necessitatibus
-                sunt fugiat voluptate enim perspiciatis velit sapiente?
+            
+
+        </div>
+
+        <div class="items-cart">
+            
+            <div id="items-present">
+                <div class="menu-header cart-head">Cart Empty</div>
+                <div class="empty-cart-image"><img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_480/Cart_empty_-_menu_2x_ejjkf2"
+                        alt="" style="height: inherit;">
+                </div>
             </div>
 
-     
-     <img class="veg-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
-                alt="">
-            <div class="item-name">Hara Bhara Kabab</div>       <div class="menu-items-desc">
-                <div class="item-img"><img src="./images/swiggy display image.jpeg" style="height: 70px;" />
-                    <div class="item-quantity">ADD</div>
-                </div> Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus consequatur sint necessitatibus
-                sunt fugiat voluptate enim perspiciatis velit sapiente?
+            <div id="menu-header">
+                <h1 id="cart-header">Cart</h1>
+
+                <div id="display-items">
+
+                </div>
+
             </div>
-            <img class="veg-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
-                alt="">
-            <div class="item-name">Paneer Tikka Hariyali</div>
-            <div class="menu-items-desc">
-                <div class="item-img"><img src="./images/swiggy display image.jpeg" style="height: 70px;" />
-                    <div class="item-quantity">ADD</div>
-                </div> Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus consequatur sint necessitatibus
-                sunt fugiat voluptate enim perspiciatis velit sapiente?
-            </div>
-            <img class="veg-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
-                alt="">
-            <div class="item-name">Soya Tandoori Chaap</div>
-            <div class="menu-items-desc">
-                <div class="item-img"><img src="./images/swiggy display image.jpeg" style="height: 70px;" />
-                    <div class="item-quantity">ADD</div>
-                </div> Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus consequatur sint necessitatibus
-                sunt fugiat voluptate enim perspiciatis velit sapiente?
-            </div>
-            <img class="veg-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
-                alt="">
-            <div class="item-name">Veg Platter</div>
-            <div class="menu-items-desc">
-                <div class="item-img"><img src="./images/swiggy display image.jpeg" style="height: 70px;" />
-                    <div class="item-quantity">ADD</div>
-                </div> Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus consequatur sint necessitatibus
-                sunt fugiat voluptate enim perspiciatis velit sapiente?
-            </div>
-            <img class="veg-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
-                alt="">
-            <div class="item-name">Veg Platter</div>
-            <div class="menu-items-desc">
-                <div class="item-img"><img src="./images/swiggy display image.jpeg" style="height: 70px;" />
-                    <div class="item-quantity">ADD</div>
-                </div> Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus consequatur sint necessitatibus
-                sunt fugiat voluptate enim perspiciatis velit sapiente?
-            </div>
-            <img class="veg-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
-                alt="">
-            <div class="item-name">Veg Platter</div>
-            <div class="menu-items-desc">
-                <div class="item-img"><img src="./images/swiggy display image.jpeg" style="height: 70px;" />
-                    <div class="item-quantity">ADD</div>
-                </div> Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus consequatur sint necessitatibus
-                sunt fugiat voluptate enim perspiciatis velit sapiente?
-            </div>
-            <img class="veg-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
-                alt="">
-            <div class="item-name">Veg Platter</div>
-            <div class="menu-items-desc">
-                <div class="item-img"><img src="./images/swiggy display image.jpeg" style="height: 70px;" />
-                    <div class="item-quantity">ADD</div>
-                </div> Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus consequatur sint necessitatibus
-                sunt fugiat voluptate enim perspiciatis velit sapiente?
-            </div>
-            <img class="veg-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
-                alt="">
-            <div class="item-name">Veg Platter</div>
-            <div class="menu-items-desc">
-                <div class="item-img"><img src="./images/swiggy display image.jpeg" style="height: 70px;" />
-                    <div class="item-quantity">ADD</div>
-                </div> Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus consequatur sint necessitatibus
-                sunt fugiat voluptate enim perspiciatis velit sapiente?
-            </div>
-            <img class="veg-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
-                alt="">
-            <div class="item-name">Veg Platter</div>
-            <div class="menu-items-desc">
-                <div class="item-img"><img src="./images/swiggy display image.jpeg" style="height: 70px;" />
-                    <div class="item-quantity">ADD</div>
-                </div> Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus consequatur sint necessitatibus
-                sunt fugiat voluptate enim perspiciatis velit sapiente?
-            </div>
-            <img class="veg-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
-                alt="">
-            <div class="item-name">Veg Platter</div>
-            <div class="menu-items-desc">
-                <div class="item-img"><img src="./images/swiggy display image.jpeg" style="height: 70px;" />
-                    <div class="item-quantity">ADD</div>
-                </div> Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus consequatur sint necessitatibus
-                sunt fugiat voluptate enim perspiciatis velit sapiente?
-            </div>
-            <img class="veg-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
-                alt="">
-            <div class="item-name">Veg Platter</div>
-            <div class="menu-items-desc">
-                <div class="item-img"><img src="./images/swiggy display image.jpeg" style="height: 70px;" />
-                    <div class="item-quantity">ADD</div>
-                </div> Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus consequatur sint necessitatibus
-                sunt fugiat voluptate enim perspiciatis velit sapiente?
-            </div>
-            <img class="veg-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
-                alt="">
-            <div class="item-name">Veg Platter</div>
-            <div class="menu-items-desc">
-                <div class="item-img"><img src="./images/swiggy display image.jpeg" style="height: 70px;" />
-                    <div class="item-quantity">ADD</div>
-                </div> Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Praesentium minus consequatur sint necessitatibus
-                sunt fugiat voluptate enim perspiciatis velit sapiente?
-            </div>
-        </div>
-        <div class="items-cart">
-            <div class="menu-header cart-head">Cart Empty</div>
-            <div class="empty-cart-image"><img
-                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_480/Cart_empty_-_menu_2x_ejjkf2"
-                    alt="" style="height: inherit;"></div>
+
         </div>
     </div>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="./controller/renderMenuItems.mjs"></script>
+    <script type="module" src="./controller/renderItemQuantity.mjs"></script>
+    <script type="module" src="./controller/renderCartItems.mjs"></script>
+    <script type="module" src="./controller/renderSearchItems.mjs"></script>
+    <script type="module" src="./controller/renderLocalStorageItems.mjs"></script>
+    <script type="module" src="./controller/storeOrderedItems.mjs"></script>
 </body>
 
 </html>
